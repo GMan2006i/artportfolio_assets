@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name, Please?</title>
+<script>
+  // Function to set the first name in localStorage
+  function setFirstName(event) {
+    event.preventDefault(); // Prevent default form submission
+    var firstName = document.getElementById("fname").value;
+    localStorage.setItem("userFirstName", firstName);
+    // You can add any additional logic here, such as navigating to another page
+    // or displaying a confirmation message.
+    alert("Thank you, " + firstName + "!");
+  }
+
+  // Function to get the first name from localStorage
+  function getFirstName() {
+    var firstName = localStorage.getItem("userFirstName");
+    if (firstName) {
+      document.getElementById("fname").value = firstName;
+    }
+  }
+</script>
+</head>
+<body onload="getFirstName()">
+
+<h2>Your Name, Please?</h2>
+
+<form onsubmit="setFirstName(event)">
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
