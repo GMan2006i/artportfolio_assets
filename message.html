@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Page</title>
+<style>
+  /* Font and size */
+  body {
+    font-family: 'Bitter', serif;
+    font-size: 14px;
+  }
+</style>
+<script>
+  // Function to get the first name from localStorage
+  function getFirstName() {
+    var firstName = localStorage.getItem("userFirstName");
+    if (firstName) {
+      document.getElementById("welcomeMessage").innerText = "And thank you, " + firstName + "!";
+    } else {
+      document.getElementById("welcomeMessage").innerText = "And thank you!";
+    }
+  }
+</script>
+</head>
+<body onload="getFirstName()">
+
+<h2 id="welcomeMessage"></h2>
+
+</body>
+</html>
