@@ -9,7 +9,16 @@
   function setFirstName(event) {
     event.preventDefault(); // Prevent default form submission
     var firstName = document.getElementById("fname").value;
-    localStorage.setItem("userFirstName", firstName);
+
+    if (firstName.toLowerCase() === "ness") {
+      document.getElementById("submitMessage").innerText = "I said YOUR name, not mine";
+      localStorage.removeItem("userFirstName"); // Clear localStorage data
+      document.getElementById("fname").value = ""; // Clear input box
+    } else {
+      localStorage.setItem("userFirstName", firstName);
+      document.getElementById("submitMessage").innerText = ""; // Clear message if no conditions match
+    }
+
     // You can add any additional logic here, such as navigating to another page
     // or displaying a confirmation message.
     alert("Thank you, " + firstName + "!");
@@ -33,5 +42,8 @@
   <input type="submit" value="Submit">
 </form>
 
+<p id="submitMessage"></p> <!-- Message container -->
+
 </body>
 </html>
+
