@@ -14,6 +14,12 @@
       document.getElementById("submitMessage").innerText = "I said YOUR name, not mine";
       localStorage.removeItem("userFirstName"); // Clear localStorage data
       document.getElementById("fname").value = ""; // Clear input box
+    } else if (firstName.toLowerCase() === "skyler") {
+      document.getElementById("submitMessage").innerText = "What's up NERD!";
+    } else if (firstName.toLowerCase() === "marc" || firstName.toLowerCase() === "marcus" || firstName.toLowerCase() === "demar" || firstName.toLowerCase() === "demarcool") {
+      document.getElementById("submitMessage").innerText = "What's up my omnibro!";
+    } else if (firstName.toLowerCase() === "john" || firstName.toLowerCase() === "john fnaf") {
+      document.getElementById("submitMessage").innerText = "lmao";
     } else {
       localStorage.setItem("userFirstName", firstName);
       document.getElementById("submitMessage").innerText = ""; // Clear message if no conditions match
